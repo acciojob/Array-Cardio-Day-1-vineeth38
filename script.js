@@ -30,7 +30,7 @@ const people = [
 // 1. Filter the list of inventors for those who were born in the 1500's and return the filtered array
 export function myfilter() {
   const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
-	console.table(fifteen);
+	return fifteen;
 }
 
 // Array.prototype.map()
@@ -38,7 +38,7 @@ export function myfilter() {
 // Ex: For the first inventor the full name will be 'Albert Einstein'
 export function map() {
 const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
-    console.log(fullNames);
+ return fullNames;
 }
 
 
@@ -46,7 +46,7 @@ const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`
 // 3. Sort the inventors by birthdate, oldest to youngest and return the sorted array
 export function sort() {
 const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
-    console.table(ordered);
+   return ordered;
 }
 
 
@@ -58,7 +58,7 @@ export function reduce() {
       return total + (inventor.passed - inventor.year);
     }, 0);
 
-    console.log(totalYears);
+    return totalYears;
 }
 
 // 5. Sort the inventors by years lived and return the sorted array
@@ -68,7 +68,7 @@ const oldest = inventors.sort(function(a, b) {
       const nextInventor = b.passed - b.year;
       return lastInventor > nextInventor ? -1 : 1;
     });
-    console.table(oldest);
+ return oldest;
 }
 
 // 6. sort Exercise
@@ -79,7 +79,7 @@ export function sortByLastName() {
       const [bLast, bFirst] = nextOne.split(', ');
       return aLast > bLast ? 1 : -1;
     });
-    console.log(alpha);
+   return alpha;
 }
 
 // 7. Reduce Exercise
@@ -96,6 +96,6 @@ export function reducedSum() {
       return obj;
     }, {});
 
-    console.log(transportation);
+   return transportation;
 
 }
